@@ -38,14 +38,13 @@ const Index = () => {
   const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE);
 
   const scrollToTop = () => {
-    const container = document.querySelector('.portfolio-content');
-    container?.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen md:py-10 transition-colors duration-500 bg-background">
-      <div className="w-full max-w-[1600px] h-full shadow-2xl">
-        <div className="relative min-h-screen md:min-h-[90vh] flex flex-col md:flex-row overflow-hidden transition-colors duration-500 bg-card text-foreground">
+    <div className="min-h-screen transition-colors duration-500 bg-background">
+      <div className="w-full max-w-[1600px] mx-auto shadow-2xl">
+        <div className="relative min-h-screen flex flex-col md:flex-row transition-colors duration-500 bg-card text-foreground">
 
           {/* Sidebar */}
           <aside className="w-full md:w-24 lg:w-28 border-b md:border-b-0 md:border-r border-border flex flex-row md:flex-col justify-between items-center py-4 md:py-12 px-6 md:px-4 z-50 shrink-0 transition-colors duration-500 bg-sidebar">
@@ -72,7 +71,7 @@ const Index = () => {
           </aside>
 
           {/* Main Content Area */}
-          <div className="portfolio-content flex-1 flex flex-col md:h-[90vh] overflow-y-auto overflow-x-hidden scroll-smooth custom-scrollbar">
+          <div className="flex-1 flex flex-col">
 
             {/* Top Navigation */}
             <header className="py-8 md:py-14 border-b border-border bg-card/95 backdrop-blur-md sticky top-0 z-40 shrink-0 transition-colors duration-500">
