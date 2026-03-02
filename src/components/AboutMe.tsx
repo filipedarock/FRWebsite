@@ -1,6 +1,18 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Badge } from '@/components/ui/badge';
-import { Trophy, Gamepad2, Tv, Film, Sparkles, Shield, X, User, Star } from 'lucide-react';
+import { Trophy, Gamepad2, Tv, Film, Sparkles, Shield, X, User, Star, MapPin, Calendar, Heart } from 'lucide-react';
+
+const BIRTHDAY = new Date(1998, 5, 14); // June 14, 1998
+
+const getAge = () => {
+  const today = new Date();
+  let age = today.getFullYear() - BIRTHDAY.getFullYear();
+  const monthDiff = today.getMonth() - BIRTHDAY.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < BIRTHDAY.getDate())) {
+    age--;
+  }
+  return age;
+};
 
 const PSN_TROPHIES = {
   platinum: 12,
@@ -50,6 +62,8 @@ const SECTIONS = [
 const AboutMe = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const age = useMemo(() => getAge(), []);
+
   if (!isOpen) {
     return (
       <button
@@ -65,24 +79,76 @@ const AboutMe = () => {
   }
 
   return (
-    <div className="w-full animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <div className="w-full relative animate-in fade-in slide-in-from-bottom-4 duration-700">
       {/* Header */}
-      <div className="flex items-center justify-between mb-10">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-col items-center mb-10">
+        <div className="flex items-center gap-3 mb-2">
           <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 flex items-center justify-center">
             <User className="w-5 h-5 text-white" />
           </div>
-          <div>
+          <div className="text-center">
             <h3 className="font-display text-lg md:text-xl italic text-foreground">Filipe Rocha</h3>
-            <p className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground">Designer • Gamer • Cinéfilo</p>
+            <p className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground">Designer • Gamer • Arte Visual</p>
           </div>
         </div>
         <button
           onClick={() => setIsOpen(false)}
-          className="w-8 h-8 rounded-full border border-border flex items-center justify-center hover:bg-foreground hover:text-background transition-all duration-300"
+          className="absolute right-0 top-0 w-8 h-8 rounded-full border border-border flex items-center justify-center hover:bg-foreground hover:text-background transition-all duration-300"
         >
           <X className="w-3.5 h-3.5" />
         </button>
+      </div>
+
+      {/* Location, Age & Bio */}
+      <div className="flex flex-col items-center gap-5 mb-10 py-6 border-y border-border">
+        {/* Porto SVG Bridge + Location */}
+        <div className="flex items-center gap-3">
+          <MapPin className="w-4 h-4 text-muted-foreground" />
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] md:text-[11px] font-medium text-foreground">Porto, Portugal</span>
+            <span className="text-lg">🇵🇹</span>
+          </div>
+        </div>
+
+        {/* D. Luís Bridge vector */}
+        <svg viewBox="0 0 200 60" className="w-40 h-12 text-muted-foreground/40" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M10 50 Q40 50 50 35 Q60 20 100 15 Q140 20 150 35 Q160 50 190 50" />
+          <line x1="10" y1="50" x2="10" y2="55" />
+          <line x1="190" y1="50" x2="190" y2="55" />
+          <line x1="5" y1="55" x2="195" y2="55" />
+          <line x1="50" y1="35" x2="50" y2="55" />
+          <line x1="100" y1="15" x2="100" y2="55" />
+          <line x1="150" y1="35" x2="150" y2="55" />
+          <path d="M50 35 L100 15 L150 35" strokeDasharray="2 2" />
+        </svg>
+
+        {/* Age */}
+        <div className="flex items-center gap-2">
+          <Calendar className="w-3.5 h-3.5 text-muted-foreground" />
+          <span className="text-[10px] md:text-[11px] text-foreground font-medium">{age} anos</span>
+        </div>
+
+        {/* Short Bio */}
+        <p className="text-[10px] md:text-[11px] leading-relaxed text-muted-foreground text-center max-w-md">
+          Criativo, comunicativo e empático. Apaixonado por carros, natureza e silêncio.
+          Por vezes introvertido, por outras extrovertido.
+        </p>
+
+        {/* Trait Badges */}
+        <div className="flex flex-wrap justify-center gap-2">
+          <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">
+            <Heart className="w-2.5 h-2.5 mr-1" /> Criativo
+          </Badge>
+          <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">
+            🚗 Carros
+          </Badge>
+          <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">
+            🌿 Natureza
+          </Badge>
+          <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">
+            🤫 Silêncio
+          </Badge>
+        </div>
       </div>
 
       {/* FC Porto */}
