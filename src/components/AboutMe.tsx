@@ -23,32 +23,32 @@ const PSN_TROPHIES = {
 
 const FAVORITES = {
   games: [
-    { name: 'The Last of Us Part II', emoji: '🎮' },
-    { name: 'God of War Ragnarök', emoji: '⚔️' },
-    { name: 'Red Dead Redemption 2', emoji: '🤠' },
-    { name: 'Ghost of Tsushima', emoji: '🗡️' },
-    { name: 'Horizon Forbidden West', emoji: '🏹' },
+    { name: 'The Last of Us Series', emoji: '🎮' },
+    { name: 'God of War Series', emoji: '⚔️' },
+    { name: 'Alan Wake 2', emoji: '🔦' },
+    { name: 'Silent Hill 2', emoji: '👻' },
+    { name: 'Dragon Ball Sparking Zero', emoji: '🐉' },
   ],
   series: [
     { name: 'Breaking Bad', emoji: '🧪' },
-    { name: 'Game of Thrones', emoji: '👑' },
     { name: 'Stranger Things', emoji: '🔦' },
-    { name: 'The Witcher', emoji: '🐺' },
-    { name: 'Peaky Blinders', emoji: '🎩' },
+    { name: 'Vikings', emoji: '⚔️' },
+    { name: 'Bates Motel', emoji: '🏨' },
+    { name: 'Heroes', emoji: '🦸' },
   ],
   movies: [
-    { name: 'Interstellar', emoji: '🚀' },
-    { name: 'The Dark Knight', emoji: '🦇' },
-    { name: 'Inception', emoji: '💭' },
+    { name: 'The Blind Side', emoji: '🏈' },
     { name: 'Gladiator', emoji: '⚔️' },
-    { name: 'Pulp Fiction', emoji: '🎬' },
+    { name: 'Batman The Dark Knight Series', emoji: '🦇' },
+    { name: 'Toy Story Series', emoji: '🧸' },
+    { name: 'Ratatouille', emoji: '🐀' },
   ],
   animes: [
-    { name: 'Attack on Titan', emoji: '⚔️' },
+    { name: 'Dragon Ball Series', emoji: '🐉' },
     { name: 'Death Note', emoji: '📓' },
-    { name: 'Naruto Shippuden', emoji: '🍥' },
-    { name: 'One Piece', emoji: '🏴‍☠️' },
+    { name: 'Naruto Series', emoji: '🍥' },
     { name: 'Demon Slayer', emoji: '🗡️' },
+    { name: 'Kuroko No Basket', emoji: '🏀' },
   ],
 };
 
@@ -106,31 +106,34 @@ const AboutMe = () => {
           </div>
         </div>
 
-        {/* Porto geographic silhouette */}
-        <svg viewBox="0 0 240 80" className="w-48 h-16 text-muted-foreground/30" fill="none" stroke="currentColor" strokeWidth="1.2">
-          {/* River Douro */}
-          <path d="M0 50 C30 48, 60 52, 90 46 C120 40, 150 44, 180 42 C200 41, 220 45, 240 43" strokeWidth="2" className="text-blue-400/40" stroke="currentColor" />
-          {/* Porto city skyline - north bank */}
-          <path d="M20 50 L20 32 L28 28 L28 50" strokeWidth="1" /> {/* Clérigos tower */}
-          <path d="M35 50 L35 36 L55 36 L55 50" strokeWidth="1" /> {/* buildings */}
-          <path d="M60 50 L60 30 L65 24 L70 30 L70 50" strokeWidth="1" /> {/* church */}
-          <path d="M75 50 L75 38 L90 38 L90 50" strokeWidth="1" /> {/* Ribeira */}
-          <path d="M95 50 L95 34 L105 34 L105 50" strokeWidth="1" />
-          <path d="M110 50 L110 40 L125 40 L125 50" strokeWidth="1" />
-          {/* D. Luís bridge arch */}
-          <path d="M50 50 Q100 20, 150 50" strokeWidth="1.5" strokeDasharray="none" />
-          <line x1="75" y1="38" x2="75" y2="50" strokeWidth="0.8" />
-          <line x1="100" y1="28" x2="100" y2="50" strokeWidth="0.8" />
-          <line x1="125" y1="38" x2="125" y2="50" strokeWidth="0.8" />
-          {/* Gaia side */}
-          <path d="M145 50 L145 42 L160 42 L160 50" strokeWidth="1" />
-          <path d="M165 50 L165 38 L180 38 L180 50" strokeWidth="1" />
-          <path d="M185 50 L185 44 L200 44 L200 50" strokeWidth="1" />
-          {/* Water reflection dots */}
-          <circle cx="60" cy="56" r="1" fill="currentColor" className="text-blue-400/20" />
-          <circle cx="100" cy="58" r="1" fill="currentColor" className="text-blue-400/20" />
-          <circle cx="140" cy="55" r="1" fill="currentColor" className="text-blue-400/20" />
-          <circle cx="180" cy="57" r="1" fill="currentColor" className="text-blue-400/20" />
+        {/* Estádio do Dragão vector */}
+        <svg viewBox="0 0 260 90" className="w-52 h-18 text-muted-foreground/30" fill="none" stroke="currentColor" strokeWidth="1.2">
+          {/* Stadium base/field */}
+          <ellipse cx="130" cy="60" rx="95" ry="18" strokeWidth="1.5" className="text-blue-500/30" stroke="currentColor" />
+          {/* Stadium structure - left stand */}
+          <path d="M40 60 L40 30 Q45 22, 60 20 L60 60" strokeWidth="1" />
+          <path d="M45 35 L55 35" strokeWidth="0.8" />
+          <path d="M45 40 L55 40" strokeWidth="0.8" />
+          <path d="M45 45 L55 45" strokeWidth="0.8" />
+          {/* Stadium structure - right stand */}
+          <path d="M200 60 L200 30 Q205 22, 220 20 L220 60" strokeWidth="1" />
+          <path d="M205 35 L215 35" strokeWidth="0.8" />
+          <path d="M205 40 L215 40" strokeWidth="0.8" />
+          <path d="M205 45 L215 45" strokeWidth="0.8" />
+          {/* Stadium roof arches */}
+          <path d="M35 30 Q70 5, 130 8 Q190 5, 225 30" strokeWidth="1.5" />
+          {/* Roof supports */}
+          <line x1="60" y1="20" x2="70" y2="12" strokeWidth="0.8" />
+          <line x1="100" y1="14" x2="100" y2="10" strokeWidth="0.8" />
+          <line x1="130" y1="12" x2="130" y2="8" strokeWidth="0.8" />
+          <line x1="160" y1="14" x2="160" y2="10" strokeWidth="0.8" />
+          <line x1="200" y1="20" x2="190" y2="12" strokeWidth="0.8" />
+          {/* Center field line */}
+          <line x1="130" y1="45" x2="130" y2="75" strokeWidth="0.5" strokeDasharray="2 2" className="text-blue-400/20" stroke="currentColor" />
+          {/* Field grass lines */}
+          <path d="M70 55 L190 55" strokeWidth="0.4" strokeDasharray="4 3" className="text-emerald-400/20" stroke="currentColor" />
+          <path d="M60 60 L200 60" strokeWidth="0.4" strokeDasharray="4 3" className="text-emerald-400/20" stroke="currentColor" />
+          <path d="M70 65 L190 65" strokeWidth="0.4" strokeDasharray="4 3" className="text-emerald-400/20" stroke="currentColor" />
         </svg>
 
         {/* Age */}
@@ -142,6 +145,7 @@ const AboutMe = () => {
         {/* Short Bio */}
         <p className="text-[10px] md:text-[11px] leading-relaxed text-muted-foreground text-center max-w-md">
           Criativo, comunicativo e empático. Apaixonado por carros, natureza e silêncio.
+          <br />
           Por vezes introvertido, por outras extrovertido.
         </p>
 
@@ -164,7 +168,7 @@ const AboutMe = () => {
 
       {/* FC Porto */}
       <div className="flex items-center justify-center gap-4 mb-10 py-5 border-y border-border">
-        <Shield className="w-6 h-6 text-blue-600" />
+        <img src="/images/fcporto.svg" alt="FC Porto" className="w-10 h-10 object-contain" />
         <div className="text-center">
           <p className="text-[9px] tracking-[0.4em] uppercase text-muted-foreground mb-1">Clube do Coração</p>
           <p className="font-display text-lg italic text-foreground">FC Porto</p>
