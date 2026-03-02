@@ -82,21 +82,17 @@ const AboutMe = () => {
     <div className="w-full relative animate-in fade-in slide-in-from-bottom-4 duration-700">
       {/* Header */}
       <div className="flex flex-col items-center mb-10">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 flex items-center justify-center">
-            <User className="w-5 h-5 text-white" />
-          </div>
-          <div className="text-center">
-            <h3 className="font-display text-lg md:text-xl italic text-foreground">Filipe Rocha</h3>
-            <p className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground">Designer • Gamer • Arte Visual</p>
-          </div>
-        </div>
         <button
           onClick={() => setIsOpen(false)}
           className="absolute right-0 top-0 w-8 h-8 rounded-full border border-border flex items-center justify-center hover:bg-foreground hover:text-background transition-all duration-300"
         >
           <X className="w-3.5 h-3.5" />
         </button>
+        <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 flex items-center justify-center mb-3">
+          <User className="w-7 h-7 text-white" />
+        </div>
+        <h3 className="font-display text-lg md:text-xl italic text-foreground">Filipe Rocha</h3>
+        <p className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground">Designer • Gamer • Arte Visual</p>
       </div>
 
       {/* Location, Age & Bio */}
@@ -110,16 +106,31 @@ const AboutMe = () => {
           </div>
         </div>
 
-        {/* D. Luís Bridge vector */}
-        <svg viewBox="0 0 200 60" className="w-40 h-12 text-muted-foreground/40" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M10 50 Q40 50 50 35 Q60 20 100 15 Q140 20 150 35 Q160 50 190 50" />
-          <line x1="10" y1="50" x2="10" y2="55" />
-          <line x1="190" y1="50" x2="190" y2="55" />
-          <line x1="5" y1="55" x2="195" y2="55" />
-          <line x1="50" y1="35" x2="50" y2="55" />
-          <line x1="100" y1="15" x2="100" y2="55" />
-          <line x1="150" y1="35" x2="150" y2="55" />
-          <path d="M50 35 L100 15 L150 35" strokeDasharray="2 2" />
+        {/* Porto geographic silhouette */}
+        <svg viewBox="0 0 240 80" className="w-48 h-16 text-muted-foreground/30" fill="none" stroke="currentColor" strokeWidth="1.2">
+          {/* River Douro */}
+          <path d="M0 50 C30 48, 60 52, 90 46 C120 40, 150 44, 180 42 C200 41, 220 45, 240 43" strokeWidth="2" className="text-blue-400/40" stroke="currentColor" />
+          {/* Porto city skyline - north bank */}
+          <path d="M20 50 L20 32 L28 28 L28 50" strokeWidth="1" /> {/* Clérigos tower */}
+          <path d="M35 50 L35 36 L55 36 L55 50" strokeWidth="1" /> {/* buildings */}
+          <path d="M60 50 L60 30 L65 24 L70 30 L70 50" strokeWidth="1" /> {/* church */}
+          <path d="M75 50 L75 38 L90 38 L90 50" strokeWidth="1" /> {/* Ribeira */}
+          <path d="M95 50 L95 34 L105 34 L105 50" strokeWidth="1" />
+          <path d="M110 50 L110 40 L125 40 L125 50" strokeWidth="1" />
+          {/* D. Luís bridge arch */}
+          <path d="M50 50 Q100 20, 150 50" strokeWidth="1.5" strokeDasharray="none" />
+          <line x1="75" y1="38" x2="75" y2="50" strokeWidth="0.8" />
+          <line x1="100" y1="28" x2="100" y2="50" strokeWidth="0.8" />
+          <line x1="125" y1="38" x2="125" y2="50" strokeWidth="0.8" />
+          {/* Gaia side */}
+          <path d="M145 50 L145 42 L160 42 L160 50" strokeWidth="1" />
+          <path d="M165 50 L165 38 L180 38 L180 50" strokeWidth="1" />
+          <path d="M185 50 L185 44 L200 44 L200 50" strokeWidth="1" />
+          {/* Water reflection dots */}
+          <circle cx="60" cy="56" r="1" fill="currentColor" className="text-blue-400/20" />
+          <circle cx="100" cy="58" r="1" fill="currentColor" className="text-blue-400/20" />
+          <circle cx="140" cy="55" r="1" fill="currentColor" className="text-blue-400/20" />
+          <circle cx="180" cy="57" r="1" fill="currentColor" className="text-blue-400/20" />
         </svg>
 
         {/* Age */}
