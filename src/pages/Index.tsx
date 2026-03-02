@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { PROJECTS, CONTACT_INFO, ITEMS_PER_PAGE } from '@/data/constants';
 import { Category } from '@/data/types';
 import ProjectCard from '@/components/ProjectCard';
+import AboutMe from '@/components/AboutMe';
 import { Sun, Moon, Mail, Linkedin, Instagram, ChevronLeft, ChevronRight, ChevronUp } from 'lucide-react';
 
 const Index = () => {
@@ -145,6 +146,10 @@ const Index = () => {
             {/* Footer */}
             <footer className="p-8 md:p-12 border-t border-border mt-auto transition-colors duration-500 bg-secondary/30">
               <div className="max-w-4xl mx-auto flex flex-col items-center gap-8 md:gap-10">
+                
+                {/* About Me Section */}
+                <AboutMe />
+
                 <div className="flex gap-10 md:gap-12 text-2xl text-portfolio-text-subtle">
                   <a
                     href={`mailto:${CONTACT_INFO.email}`}
