@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Badge } from '@/components/ui/badge';
-import { Trophy, Gamepad2, Tv, Film, Sparkles, Shield, X, User, Star, MapPin, Calendar, Heart } from 'lucide-react';
+import { Trophy, Gamepad2, Tv, Film, Sparkles, X, User, Star, MapPin, Calendar, Heart, Percent } from 'lucide-react';
 
 const BIRTHDAY = new Date(1998, 5, 14); // June 14, 1998
 
@@ -19,6 +19,20 @@ const PSN_TROPHIES = {
   gold: 87,
   silver: 210,
   bronze: 540,
+};
+
+const LAST_PLATINUM = {
+  name: 'Silent Hill 2',
+  coverUrl: '', // Add cover image URL here
+  date: '2025-02-15', // Update with actual date
+};
+
+const PSN_STATS = {
+  totalGames: 45,
+  completedGames: 12,
+  get completionRate() {
+    return Math.round((this.completedGames / this.totalGames) * 100);
+  },
 };
 
 const FAVORITES = {
@@ -106,34 +120,50 @@ const AboutMe = () => {
           </div>
         </div>
 
-        {/* Estádio do Dragão vector */}
-        <svg viewBox="0 0 260 90" className="w-52 h-18 text-muted-foreground/30" fill="none" stroke="currentColor" strokeWidth="1.2">
-          {/* Stadium base/field */}
-          <ellipse cx="130" cy="60" rx="95" ry="18" strokeWidth="1.5" className="text-blue-500/30" stroke="currentColor" />
-          {/* Stadium structure - left stand */}
-          <path d="M40 60 L40 30 Q45 22, 60 20 L60 60" strokeWidth="1" />
-          <path d="M45 35 L55 35" strokeWidth="0.8" />
-          <path d="M45 40 L55 40" strokeWidth="0.8" />
-          <path d="M45 45 L55 45" strokeWidth="0.8" />
-          {/* Stadium structure - right stand */}
-          <path d="M200 60 L200 30 Q205 22, 220 20 L220 60" strokeWidth="1" />
-          <path d="M205 35 L215 35" strokeWidth="0.8" />
-          <path d="M205 40 L215 40" strokeWidth="0.8" />
-          <path d="M205 45 L215 45" strokeWidth="0.8" />
-          {/* Stadium roof arches */}
-          <path d="M35 30 Q70 5, 130 8 Q190 5, 225 30" strokeWidth="1.5" />
-          {/* Roof supports */}
-          <line x1="60" y1="20" x2="70" y2="12" strokeWidth="0.8" />
-          <line x1="100" y1="14" x2="100" y2="10" strokeWidth="0.8" />
-          <line x1="130" y1="12" x2="130" y2="8" strokeWidth="0.8" />
-          <line x1="160" y1="14" x2="160" y2="10" strokeWidth="0.8" />
-          <line x1="200" y1="20" x2="190" y2="12" strokeWidth="0.8" />
-          {/* Center field line */}
-          <line x1="130" y1="45" x2="130" y2="75" strokeWidth="0.5" strokeDasharray="2 2" className="text-blue-400/20" stroke="currentColor" />
-          {/* Field grass lines */}
-          <path d="M70 55 L190 55" strokeWidth="0.4" strokeDasharray="4 3" className="text-emerald-400/20" stroke="currentColor" />
-          <path d="M60 60 L200 60" strokeWidth="0.4" strokeDasharray="4 3" className="text-emerald-400/20" stroke="currentColor" />
-          <path d="M70 65 L190 65" strokeWidth="0.4" strokeDasharray="4 3" className="text-emerald-400/20" stroke="currentColor" />
+        {/* Estádio do Dragão - sketch style */}
+        <svg viewBox="0 0 400 180" className="w-64 md:w-72 h-auto text-muted-foreground/40" fill="none" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round">
+          {/* Ground / road curve */}
+          <path d="M10 160 Q80 155, 140 150 Q200 145, 280 148 Q340 150, 390 155" strokeWidth="0.6" />
+          <path d="M30 165 Q100 158, 160 155 Q240 150, 300 153 Q360 156, 395 160" strokeWidth="0.5" />
+          {/* Stadium base - curved foundation */}
+          <path d="M60 148 Q80 145, 100 140 L100 105" strokeWidth="1" />
+          <path d="M300 148 Q310 145, 320 140 L320 105" strokeWidth="1" />
+          {/* Lower facade - vertical lines (windows/structure) */}
+          {Array.from({ length: 18 }).map((_, i) => {
+            const x = 108 + i * 11.5;
+            return <line key={`facade-${i}`} x1={x} y1={140 - Math.sin((i / 17) * Math.PI) * 5} x2={x} y2={110 - Math.sin((i / 17) * Math.PI) * 8} strokeWidth="0.7" opacity={0.6 + Math.random() * 0.3} />;
+          })}
+          {/* Lower wall outline */}
+          <path d="M100 140 Q150 135, 210 133 Q270 135, 320 140" strokeWidth="0.9" />
+          <path d="M95 110 Q150 103, 210 100 Q270 103, 325 110" strokeWidth="0.9" />
+          {/* Upper structure - stands */}
+          <path d="M85 105 Q90 95, 100 90 L100 70" strokeWidth="1" />
+          <path d="M320 105 Q325 95, 330 90 L330 70" strokeWidth="1" />
+          {/* Horizontal bands on upper structure */}
+          <path d="M100 85 Q210 75, 320 85" strokeWidth="0.6" />
+          <path d="M100 95 Q210 87, 320 95" strokeWidth="0.6" />
+          {/* Roof - characteristic sweeping canopy */}
+          <path d="M70 72 Q100 60, 140 52 Q210 42, 280 52 Q320 60, 350 72" strokeWidth="1.4" />
+          {/* Roof truss/lattice structure */}
+          {Array.from({ length: 12 }).map((_, i) => {
+            const x = 105 + i * 18;
+            const topY = 52 + Math.abs(i - 5.5) * 2.2;
+            const bottomY = 70 + Math.abs(i - 5.5) * 1.5;
+            return <line key={`truss-${i}`} x1={x} y1={topY} x2={x} y2={bottomY} strokeWidth="0.5" opacity="0.5" />;
+          })}
+          {/* Cross-bracing on roof */}
+          <path d="M105 58 L125 66 L145 55 L165 65 L185 53 L205 63 L225 52 L245 62 L265 54 L285 64 L305 58 L325 68" strokeWidth="0.4" opacity="0.4" />
+          {/* Dragão silhouette (dragon) at center entrance */}
+          <path d="M205 130 Q208 125, 210 120 Q212 118, 215 120 Q213 125, 212 128 Q210 132, 207 133" strokeWidth="0.6" opacity="0.7" />
+          {/* Entrance/rotunda at bottom */}
+          <ellipse cx="210" cy="155" rx="15" ry="8" strokeWidth="0.7" />
+          {/* Landscape hints - trees */}
+          <path d="M50 150 Q48 145, 50 140 Q52 145, 50 150" strokeWidth="0.5" opacity="0.3" />
+          <path d="M345 145 Q343 140, 345 135 Q347 140, 345 145" strokeWidth="0.5" opacity="0.3" />
+          <path d="M355 148 Q353 143, 355 138 Q357 143, 355 148" strokeWidth="0.5" opacity="0.3" />
+          {/* Parking lines hint */}
+          <line x1="20" y1="165" x2="45" y2="162" strokeWidth="0.3" opacity="0.3" />
+          <line x1="25" y1="168" x2="50" y2="165" strokeWidth="0.3" opacity="0.3" />
         </svg>
 
         {/* Age */}
@@ -209,6 +239,35 @@ const AboutMe = () => {
             <div className="text-2xl mb-1">🥉</div>
             <p className="text-xl font-bold text-foreground">{PSN_TROPHIES.bronze}</p>
             <p className="text-[8px] tracking-[0.3em] uppercase text-muted-foreground mt-1">Bronze</p>
+          </div>
+        </div>
+
+        {/* Last Platinum & Completion Rate */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-6 max-w-lg mx-auto">
+          {/* Last Platinum */}
+          <div className="flex items-center gap-3 border border-border rounded-sm p-3 bg-card flex-1 w-full">
+            <div className="w-12 h-16 rounded-sm bg-muted flex items-center justify-center overflow-hidden shrink-0">
+              {LAST_PLATINUM.coverUrl ? (
+                <img src={LAST_PLATINUM.coverUrl} alt={LAST_PLATINUM.name} className="w-full h-full object-cover" />
+              ) : (
+                <Gamepad2 className="w-5 h-5 text-muted-foreground/50" />
+              )}
+            </div>
+            <div>
+              <p className="text-[8px] tracking-[0.3em] uppercase text-muted-foreground">Última Platina</p>
+              <p className="text-[11px] font-semibold text-foreground">{LAST_PLATINUM.name}</p>
+              <p className="text-[9px] text-muted-foreground">{LAST_PLATINUM.date}</p>
+            </div>
+          </div>
+
+          {/* Completion Rate */}
+          <div className="border border-border rounded-sm p-3 bg-card text-center flex-1 w-full">
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <Percent className="w-3 h-3 text-muted-foreground" />
+              <p className="text-[8px] tracking-[0.3em] uppercase text-muted-foreground">Conclusão</p>
+            </div>
+            <p className="text-xl font-bold text-foreground">{PSN_STATS.completionRate}%</p>
+            <p className="text-[9px] text-muted-foreground">{PSN_STATS.completedGames} de {PSN_STATS.totalGames} jogos</p>
           </div>
         </div>
       </div>
