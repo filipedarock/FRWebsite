@@ -1,6 +1,21 @@
 import { useState, useMemo } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Trophy, Gamepad2, Tv, Film, Sparkles, X, User, Star, MapPin, Calendar, Heart, Percent } from 'lucide-react';
+import hobbyCars from '@/assets/hobby-cars.jpg';
+import hobbyNature from '@/assets/hobby-nature.jpg';
+import hobbyTravel from '@/assets/hobby-travel.jpg';
+import hobbyCinema from '@/assets/hobby-cinema.jpg';
+import hobbyPhotography from '@/assets/hobby-photography.jpg';
+import hobbySilence from '@/assets/hobby-silence.jpg';
+
+const HOBBY_PHOTOS = [
+  { src: hobbyCars, label: 'Carros' },
+  { src: hobbyNature, label: 'Natureza' },
+  { src: hobbyTravel, label: 'Viajar' },
+  { src: hobbyCinema, label: 'Cinema' },
+  { src: hobbyPhotography, label: 'Fotografia' },
+  { src: hobbySilence, label: 'Silêncio' },
+];
 
 const BIRTHDAY = new Date(1998, 5, 14); // June 14, 1998
 
@@ -193,12 +208,40 @@ const AboutMe = () => {
           <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">
             🤫 Silêncio
           </Badge>
+          <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">
+            ✈️ Viajar
+          </Badge>
+          <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">
+            🎬 Cinema
+          </Badge>
+          <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">
+            📸 Fotografia
+          </Badge>
+        </div>
+
+        {/* Hobby Photos Grid - Instagram style */}
+        <div className="grid grid-cols-3 gap-1.5 max-w-sm mx-auto w-full">
+          {HOBBY_PHOTOS.map((hobby) => (
+            <div key={hobby.label} className="group relative aspect-square overflow-hidden rounded-sm">
+              <img
+                src={hobby.src}
+                alt={hobby.label}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                <span className="text-white text-[9px] tracking-[0.2em] uppercase font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {hobby.label}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* FC Porto */}
       <div className="flex items-center justify-center gap-4 mb-10 py-5 border-y border-border">
-        <img src="/images/fcporto.svg" alt="FC Porto" className="w-[50px] h-[50px] object-contain" />
+        <img src="/images/fcporto.svg" alt="FC Porto" className="w-[70px] h-[70px] object-contain" />
         <div className="text-center">
           <p className="text-[9px] tracking-[0.4em] uppercase text-muted-foreground mb-1">Clube do Coração</p>
           <p className="font-display text-lg italic text-foreground">FC Porto</p>
