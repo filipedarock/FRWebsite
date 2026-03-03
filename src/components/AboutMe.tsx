@@ -168,7 +168,7 @@ const AboutMe = () => {
 
       {/* FC Porto */}
       <div className="flex items-center justify-center gap-4 mb-10 py-5 border-y border-border">
-        <img src="/images/fcporto.svg" alt="FC Porto" className="w-10 h-10 object-contain" />
+        <img src="/images/fcporto.svg" alt="FC Porto" className="w-[50px] h-[50px] object-contain" />
         <div className="text-center">
           <p className="text-[9px] tracking-[0.4em] uppercase text-muted-foreground mb-1">Clube do Coração</p>
           <p className="font-display text-lg italic text-foreground">FC Porto</p>
@@ -227,21 +227,16 @@ const AboutMe = () => {
             </div>
             <div className="space-y-2">
               {FAVORITES[key].map((item, idx) => (
-                <div key={item.name} className="flex items-center gap-3 group">
-                  <span className="text-[9px] font-bold text-muted-foreground/50 w-4 text-right">
-                    {idx + 1}
+                <div key={item.name} className={`flex items-center gap-3 group rounded-sm px-2 py-1.5 -mx-2 transition-all duration-300 ${idx === 0 ? 'bg-gradient-to-r from-yellow-500/10 to-amber-500/5 border border-yellow-500/20' : ''}`}>
+                  <span className={`text-[9px] font-bold w-4 text-right ${idx === 0 ? 'text-yellow-500' : 'text-muted-foreground/50'}`}>
+                    {idx === 0 ? '★' : idx + 1}
                   </span>
                   <div className="flex-1 flex items-center justify-between">
-                    <span className="text-[10px] md:text-[11px] font-medium text-foreground/80 group-hover:text-foreground transition-colors duration-300">
+                    <span className={`text-[10px] md:text-[11px] font-medium group-hover:text-foreground transition-colors duration-300 ${idx === 0 ? 'text-foreground' : 'text-foreground/80'}`}>
                       {item.name}
                     </span>
                     <span className="text-sm">{item.emoji}</span>
                   </div>
-                  {idx === 0 && (
-                    <Badge variant="outline" className="text-[7px] tracking-wider px-1.5 py-0 h-4 border-foreground/20">
-                      <Star className="w-2.5 h-2.5 mr-0.5" /> FAV
-                    </Badge>
-                  )}
                 </div>
               ))}
             </div>
