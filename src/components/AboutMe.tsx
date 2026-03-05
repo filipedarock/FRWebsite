@@ -324,7 +324,7 @@ const AboutMe = () => {
                 {/* Platinum badge */}
                 {game.hasPlatinum && (
                   <div className="absolute top-1 right-1 z-10">
-                    <span className="text-sm">🏆</span>
+                    <img src={platinumTrophy} alt="Platinum" className="w-4 h-4 object-contain" />
                   </div>
                 )}
 
