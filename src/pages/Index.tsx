@@ -3,9 +3,12 @@ import { PROJECTS, CONTACT_INFO, ITEMS_PER_PAGE } from '@/data/constants';
 import { Category } from '@/data/types';
 import ProjectCard from '@/components/ProjectCard';
 import AboutMe from '@/components/AboutMe';
-import { Sun, Moon, Mail, Linkedin, Instagram, ChevronLeft, ChevronRight, ChevronUp } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { Sun, Moon, Mail, Linkedin, Instagram, ChevronLeft, ChevronRight, ChevronUp, Globe } from 'lucide-react';
 
 const Index = () => {
+  const { lang, setLang, t } = useLanguage();
+
   const navItems = useMemo(() => {
     const items: Category[] = ['ANIWALL', 'BANNERS', 'OTHERS', 'PHOTOGRAPHY', 'SIGNATURES', 'SOCIAL MEDIA'];
     return items.sort((a, b) => a.localeCompare(b));
@@ -15,9 +18,7 @@ const Index = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
 
-  useEffect(() => {
-    setCurrentPage(0);
-  }, [activeFilter]);
+  useEffect(() => { setCurrentPage(0); }, [activeFilter]);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -42,6 +43,19 @@ const Index = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Map category names for display based on language
+  const getCategoryDisplay = (cat: Category) => {
+    const map: Record<string, string> = {
+      'ANIWALL': t('nav.aniwall'),
+      'BANNERS': t('nav.banners'),
+      'OTHERS': t('nav.others'),
+      'PHOTOGRAPHY': t('nav.photography'),
+      'SIGNATURES': t('nav.signatures'),
+      'SOCIAL MEDIA': t('nav.social_media'),
+    };
+    return map[cat] || cat;
+  };
+
   return (
     <div className="min-h-screen transition-colors duration-500 bg-background">
       <div className="w-full max-w-[1600px] mx-auto shadow-2xl">
@@ -49,14 +63,25 @@ const Index = () => {
 
           {/* Sidebar */}
           <aside className="w-full md:w-24 lg:w-28 border-b md:border-b-0 md:border-r border-border flex flex-row md:flex-col justify-between items-center py-4 md:py-12 px-6 md:px-4 z-50 shrink-0 transition-colors duration-500 bg-sidebar">
-            {/* Theme Toggle */}
-            <button
-              onClick={() => setIsDarkMode(!isDarkMode)}
-              className="text-xl transition-all duration-300 transform hover:scale-125 text-muted-foreground hover:text-foreground"
-              title={isDarkMode ? 'Modo Claro' : 'Modo Escuro'}
-            >
-              {isDarkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5" />}
-            </button>
+            {/* Theme & Language Toggles */}
+            <div className="flex flex-row md:flex-col items-center gap-3">
+              <button
+                onClick={() => setIsDarkMode(!isDarkMode)}
+                className="text-xl transition-all duration-300 transform hover:scale-125 text-muted-foreground hover:text-foreground"
+                title={isDarkMode ? t('theme.light') : t('theme.dark')}
+              >
+                {isDarkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5" />}
+              </button>
+
+              <button
+                onClick={() => setLang(lang === 'pt' ? 'en' : 'pt')}
+                className="flex items-center gap-1 text-[8px] font-bold tracking-widest uppercase transition-all duration-300 text-muted-foreground hover:text-foreground hover:scale-110"
+                title={lang === 'pt' ? 'Switch to English' : 'Mudar para Português'}
+              >
+                <Globe className="w-3.5 h-3.5" />
+                <span>{lang === 'pt' ? 'EN' : 'PT'}</span>
+              </button>
+            </div>
 
             {/* Logo and Branding */}
             <div className="md:mt-auto flex flex-row md:flex-col items-center gap-4 md:gap-6">
@@ -65,7 +90,7 @@ const Index = () => {
                   <div className="w-full h-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 rounded-full" />
                 </div>
                 <div className="vertical-text text-[10px] md:text-[11px] font-bold tracking-[0.2em] md:tracking-[0.4em] whitespace-nowrap uppercase">
-                  Portfolio <span className="font-light text-muted-foreground">Filipe Rocha</span>
+                  {t('sidebar.portfolio')} <span className="font-light text-muted-foreground">{t('sidebar.by')}</span>
                 </div>
               </div>
             </div>
@@ -86,7 +111,7 @@ const Index = () => {
                           activeFilter === item ? 'text-foreground' : ''
                         }`}
                       >
-                        {item}
+                        {getCategoryDisplay(item)}
                         {activeFilter === item && (
                           <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-foreground animate-in fade-in zoom-in duration-300" />
                         )}
@@ -111,7 +136,7 @@ const Index = () => {
               {filteredProjects.length === 0 ? (
                 <div className="py-32 text-center">
                   <p className="text-[10px] tracking-[0.4em] uppercase font-light text-portfolio-text-subtle">
-                    A carregar a criatividade...
+                    {t('gallery.loading')}
                   </p>
                 </div>
               ) : totalPages > 1 && (
@@ -125,11 +150,9 @@ const Index = () => {
                   >
                     <ChevronLeft className="w-4 h-4" />
                   </button>
-
                   <span className="text-[10px] tracking-[0.5em] font-medium uppercase text-muted-foreground">
                     {currentPage + 1} / {totalPages}
                   </span>
-
                   <button
                     disabled={currentPage === totalPages - 1}
                     onClick={() => setCurrentPage(p => p + 1)}
@@ -146,41 +169,24 @@ const Index = () => {
             {/* Footer */}
             <footer className="p-8 md:p-12 border-t border-border mt-auto transition-colors duration-500 bg-secondary/30">
               <div className="max-w-4xl mx-auto flex flex-col items-center gap-8 md:gap-10">
-                
-                {/* About Me Section */}
                 <AboutMe />
 
                 <div className="flex gap-10 md:gap-12 text-2xl text-portfolio-text-subtle">
-                  <a
-                    href={`mailto:${CONTACT_INFO.email}`}
-                    title="Email"
-                    className="transition-all transform hover:scale-125 duration-300 hover:text-foreground"
-                  >
+                  <a href={`mailto:${CONTACT_INFO.email}`} title="Email" className="transition-all transform hover:scale-125 duration-300 hover:text-foreground">
                     <Mail className="w-6 h-6" />
                   </a>
-                  <a
-                    href={CONTACT_INFO.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="LinkedIn"
-                    className="transition-all transform hover:scale-125 duration-300 hover:text-foreground"
-                  >
+                  <a href={CONTACT_INFO.linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn" className="transition-all transform hover:scale-125 duration-300 hover:text-foreground">
                     <Linkedin className="w-6 h-6" />
                   </a>
-                  <a
-                    href="#"
-                    title="Instagram"
-                    className="transition-all transform hover:scale-125 duration-300 hover:text-foreground"
-                  >
+                  <a href="#" title="Instagram" className="transition-all transform hover:scale-125 duration-300 hover:text-foreground">
                     <Instagram className="w-6 h-6" />
                   </a>
                 </div>
 
                 <div className="flex flex-col items-center gap-4">
                   <p className="text-[8px] md:text-[10px] tracking-[0.15em] md:tracking-[0.2em] text-center uppercase font-medium text-muted-foreground">
-                    © {new Date().getFullYear()} Filipe Rocha Studio. All rights reserved.
+                    {t('footer.rights').replace('{year}', String(new Date().getFullYear()))}
                   </p>
-
                   <button
                     onClick={scrollToTop}
                     className="group w-10 h-10 rounded-full border border-border flex items-center justify-center transition-all duration-500 shadow-sm bg-card hover:bg-foreground hover:text-background"
