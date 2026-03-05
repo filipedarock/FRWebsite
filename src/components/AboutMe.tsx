@@ -9,6 +9,7 @@ import hobbyTravel from '@/assets/hobby-travel.jpg';
 import hobbyCinema from '@/assets/hobby-cinema.jpg';
 import hobbyPhotography from '@/assets/hobby-photography.jpg';
 import hobbySilence from '@/assets/hobby-silence.jpg';
+import platinumTrophy from '@/assets/platinum-trophy.png';
 
 const BIRTHDAY = new Date(1998, 5, 14);
 
