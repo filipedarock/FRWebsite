@@ -7,7 +7,7 @@ export interface GameEntry {
 
 export const GAMES_LIBRARY: GameEntry[] = [
   { name: 'Alan Wake 2', platform: 'PS5', hasPlatinum: true, completion: 89 },
-  { name: 'Alan Wake Remastered', platform: 'PS5', hasPlatinum: false, completion: 47 },
+  { name: 'Alan Wake 1', platform: 'PS5', hasPlatinum: false, completion: 47 },
   { name: 'Astro Bot', platform: 'PS5', hasPlatinum: true, completion: 100 },
   { name: "Astro's Playroom", platform: 'PS5', hasPlatinum: true, completion: 100 },
   { name: 'Demon Slayer: The Hinokami Chronicles', platform: 'PS5', hasPlatinum: true, completion: 10 },
