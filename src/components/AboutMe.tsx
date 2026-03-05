@@ -229,7 +229,7 @@ const AboutMe = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-lg mx-auto">
           <div className="text-center py-4 px-3 border border-border rounded-sm hover:border-foreground/20 transition-all duration-300 bg-card">
-            <div className="text-2xl mb-1">🏆</div>
+            <img src={platinumTrophy} alt="Platinum Trophy" className="w-7 h-7 object-contain mb-1" />
             <p className="text-xl font-bold text-foreground">{PSN_TROPHIES.platinum}</p>
             <p className="text-[8px] tracking-[0.3em] uppercase text-muted-foreground mt-1">{t('psn.platinum')}</p>
           </div>
