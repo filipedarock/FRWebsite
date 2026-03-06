@@ -356,7 +356,7 @@ const AboutMe = () => {
                   <div className="w-full h-[2px] bg-muted rounded-full mt-1 overflow-hidden">
                     <div
                       className={`h-full rounded-full transition-all duration-500 ${
-                        game.completion === 100 ? 'bg-emerald-500' : game.hasPlatinum ? 'bg-yellow-500' : 'bg-muted-foreground/40'
+                        game.completion === 100 ? 'bg-emerald-500' : game.hasPlatinum ? 'bg-emerald-500' : 'bg-muted-foreground/40'
                       }`}
                       style={{ width: `${game.completion}%` }}
                     />

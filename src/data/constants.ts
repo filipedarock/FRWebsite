@@ -47,7 +47,7 @@ export const PROJECTS: Project[] = [
   {
     id: '1',
     title: 'Minimalist Signature',
-    category: 'SIGNATURES',
+    category: 'ARTS',
     imageUrl: 'https://picsum.photos/400/500?random=1',
     description: 'A professional minimalist signature for executive branding.'
   },
@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
   {
     id: '5',
     title: 'Modern Signature V2',
-    category: 'SIGNATURES',
+    category: 'ARTS',
     imageUrl: 'https://picsum.photos/400/250?random=5',
     description: 'Sleek signature with thin font styles.'
   },

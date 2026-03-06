@@ -93,7 +93,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.banners': 'BANNERS',
     'nav.others': 'OTHERS',
     'nav.photography': 'PHOTOGRAPHY',
-    'nav.signatures': 'SIGNATURES',
+    'nav.arts': 'ARTS',
     'nav.social_media': 'SOCIAL MEDIA',
     
     // Theme

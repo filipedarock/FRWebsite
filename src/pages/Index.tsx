@@ -50,7 +50,7 @@ const Index = () => {
       'BANNERS': t('nav.banners'),
       'OTHERS': t('nav.others'),
       'PHOTOGRAPHY': t('nav.photography'),
-      'SIGNATURES': t('nav.signatures'),
+      'ARTS': t('nav.arts'),
       'SOCIAL MEDIA': t('nav.social_media'),
     };
     return map[cat] || cat;
