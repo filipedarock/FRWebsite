@@ -1,4 +1,8 @@
 import { Project, ContactInfo } from './types';
+import photoParis from '@/assets/photo-paris.jpg';
+import photoPaiva from '@/assets/photo-paiva.jpg';
+import photoJardimMorro from '@/assets/photo-jardim-morro.jpg';
+import photoGaia from '@/assets/photo-gaia.jpg';
 
 export const PROJECTS: Project[] = [
   {
