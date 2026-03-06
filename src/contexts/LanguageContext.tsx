@@ -19,7 +19,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.banners': 'BANNERS',
     'nav.others': 'OUTROS',
     'nav.photography': 'FOTOGRAFIA',
-    'nav.signatures': 'ASSINATURAS',
+    'nav.arts': 'ARTS',
     'nav.social_media': 'SOCIAL MEDIA',
     
     // Theme
