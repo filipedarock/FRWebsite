@@ -10,7 +10,7 @@ const Index = () => {
   const { lang, setLang, t } = useLanguage();
 
   const navItems = useMemo(() => {
-    const items: Category[] = ['ANIWALL', 'BANNERS', 'OTHERS', 'PHOTOGRAPHY', 'SIGNATURES', 'SOCIAL MEDIA'];
+    const items: Category[] = ['ANIWALL', 'ARTS', 'BANNERS', 'OTHERS', 'PHOTOGRAPHY', 'SOCIAL MEDIA'];
     return items.sort((a, b) => a.localeCompare(b));
   }, []);
 
@@ -50,7 +50,7 @@ const Index = () => {
       'BANNERS': t('nav.banners'),
       'OTHERS': t('nav.others'),
       'PHOTOGRAPHY': t('nav.photography'),
-      'SIGNATURES': t('nav.signatures'),
+      'ARTS': t('nav.arts'),
       'SOCIAL MEDIA': t('nav.social_media'),
     };
     return map[cat] || cat;

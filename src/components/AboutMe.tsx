@@ -346,7 +346,7 @@ const AboutMe = () => {
                   </p>
                   <div className="flex items-center justify-between mt-1">
                     <div className="flex items-center gap-0.5">
-                      {game.hasPlatinum && <CheckCircle className="w-2.5 h-2.5 text-yellow-500" />}
+                      {game.hasPlatinum && <CheckCircle className="w-2.5 h-2.5 text-emerald-500" />}
                       <span className={`text-[7px] font-bold ${game.completion === 100 ? 'text-emerald-500' : 'text-muted-foreground'}`}>
                         {game.completion}%
                       </span>
@@ -356,7 +356,7 @@ const AboutMe = () => {
                   <div className="w-full h-[2px] bg-muted rounded-full mt-1 overflow-hidden">
                     <div
                       className={`h-full rounded-full transition-all duration-500 ${
-                        game.completion === 100 ? 'bg-emerald-500' : game.hasPlatinum ? 'bg-yellow-500' : 'bg-muted-foreground/40'
+                        game.completion === 100 ? 'bg-emerald-500' : game.hasPlatinum ? 'bg-emerald-500' : 'bg-muted-foreground/40'
                       }`}
                       style={{ width: `${game.completion}%` }}
                     />

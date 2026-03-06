@@ -1,4 +1,8 @@
 import { Project, ContactInfo } from './types';
+import photoParis from '@/assets/photo-paris.jpg';
+import photoPaiva from '@/assets/photo-paiva.jpg';
+import photoJardimMorro from '@/assets/photo-jardim-morro.jpg';
+import photoGaia from '@/assets/photo-gaia.jpg';
 
 export const PROJECTS: Project[] = [
   {
@@ -45,9 +49,37 @@ export const PROJECTS: Project[] = [
     description: 'Realce de texturas e HDR para fotografia de paisagem alpina.'
   },
   {
+    id: 'p3',
+    title: 'Paris by Night',
+    category: 'PHOTOGRAPHY',
+    imageUrl: photoParis,
+    description: 'Long exposure photography capturing the light trails on the A15 highway heading to Paris.'
+  },
+  {
+    id: 'p4',
+    title: 'Passadiços do Paiva',
+    category: 'PHOTOGRAPHY',
+    imageUrl: photoPaiva,
+    description: 'The raw beauty of the Paiva river cutting through ancient rocks in Arouca, Portugal.'
+  },
+  {
+    id: 'p5',
+    title: 'Jardim do Morro',
+    category: 'PHOTOGRAPHY',
+    imageUrl: photoJardimMorro,
+    description: 'Golden hour sunset over the Douro river seen from Jardim do Morro, Vila Nova de Gaia.'
+  },
+  {
+    id: 'p6',
+    title: 'Gaia Sunset',
+    category: 'PHOTOGRAPHY',
+    imageUrl: photoGaia,
+    description: 'Warm sunset tones reflecting on the Douro river with Porto and Gaia in view.'
+  },
+  {
     id: '1',
     title: 'Minimalist Signature',
-    category: 'SIGNATURES',
+    category: 'ARTS',
     imageUrl: 'https://picsum.photos/400/500?random=1',
     description: 'A professional minimalist signature for executive branding.'
   },
@@ -75,7 +107,7 @@ export const PROJECTS: Project[] = [
   {
     id: '5',
     title: 'Modern Signature V2',
-    category: 'SIGNATURES',
+    category: 'ARTS',
     imageUrl: 'https://picsum.photos/400/250?random=5',
     description: 'Sleek signature with thin font styles.'
   },
