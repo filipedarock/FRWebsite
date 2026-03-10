@@ -16,11 +16,10 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Nav
     'nav.aniwall': 'ANIWALL',
-    'nav.banners': 'BANNERS',
     'nav.others': 'OUTROS',
     'nav.photography': 'FOTOGRAFIA',
     'nav.arts': 'ARTS',
-    'nav.social_media': 'SOCIAL MEDIA',
+    'nav.social_media': 'REDES SOCIAIS',
     
     // Theme
     'theme.light': 'Modo Claro',
