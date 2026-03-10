@@ -97,13 +97,6 @@ export const PROJECTS: Project[] = [
     description: 'Engaging Instagram post for travel agencies.'
   },
   {
-    id: '3',
-    title: 'Tech Banner 2024',
-    category: 'BANNERS',
-    imageUrl: 'https://picsum.photos/400/400?random=3',
-    description: 'High-conversion banner for a tech product launch.'
-  },
-  {
     id: '4',
     title: 'Abstract Concept',
     category: 'OTHERS',
