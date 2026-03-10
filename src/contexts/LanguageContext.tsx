@@ -81,6 +81,9 @@ const translations: Record<Language, Record<string, string>> = {
     'project.before': 'Antes',
     'project.after': 'Depois',
     'project.price': 'Preço sob consulta',
+    'project.download': 'Descarregar Wallpaper',
+    'project.download_unavailable': 'Download como wallpaper não disponível',
+    'project.compare_hint': 'Passe o rato na imagem para comparar a edição',
   },
   en: {
     // Sidebar
