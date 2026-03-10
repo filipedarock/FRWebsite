@@ -1,4 +1,4 @@
-export type Category = 'ANIWALL' | 'PHOTOGRAPHY' | 'ARTS' | 'SOCIAL MEDIA' | 'BANNERS' | 'OTHERS';
+export type Category = 'ANIWALL' | 'PHOTOGRAPHY' | 'ARTS' | 'SOCIAL MEDIA' | 'OTHERS';
 
 export interface Project {
   id: string;
@@ -9,6 +9,7 @@ export interface Project {
   description: string;
   price?: string;
   buyUrl?: string;
+  downloadable?: boolean;
 }
 
 export interface ContactInfo {

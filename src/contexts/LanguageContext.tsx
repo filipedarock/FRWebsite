@@ -16,11 +16,10 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Nav
     'nav.aniwall': 'ANIWALL',
-    'nav.banners': 'BANNERS',
     'nav.others': 'OUTROS',
     'nav.photography': 'FOTOGRAFIA',
     'nav.arts': 'ARTS',
-    'nav.social_media': 'SOCIAL MEDIA',
+    'nav.social_media': 'REDES SOCIAIS',
     
     // Theme
     'theme.light': 'Modo Claro',
@@ -82,6 +81,9 @@ const translations: Record<Language, Record<string, string>> = {
     'project.before': 'Antes',
     'project.after': 'Depois',
     'project.price': 'Preço sob consulta',
+    'project.download': 'Descarregar Wallpaper',
+    'project.download_unavailable': 'Download como wallpaper não disponível',
+    'project.compare_hint': 'Passe o rato na imagem para comparar a edição',
   },
   en: {
     // Sidebar
@@ -90,7 +92,6 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Nav
     'nav.aniwall': 'ANIWALL',
-    'nav.banners': 'BANNERS',
     'nav.others': 'OTHERS',
     'nav.photography': 'PHOTOGRAPHY',
     'nav.arts': 'ARTS',
@@ -156,6 +157,9 @@ const translations: Record<Language, Record<string, string>> = {
     'project.before': 'Before',
     'project.after': 'After',
     'project.price': 'Price on request',
+    'project.download': 'Download Wallpaper',
+    'project.download_unavailable': 'Wallpaper download not available',
+    'project.compare_hint': 'Hover over the image to compare the edit',
   },
 };
 

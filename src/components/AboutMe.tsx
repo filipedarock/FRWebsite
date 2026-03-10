@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Badge } from '@/components/ui/badge';
-import { Trophy, Gamepad2, Tv, Film, Sparkles, X, User, Star, MapPin, Calendar, Heart, Percent, CheckCircle } from 'lucide-react';
+import { Trophy, Gamepad2, Tv, Film, Sparkles, X, User, Star, MapPin, Calendar, Heart, Percent, CheckCircle, Camera } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { GAMES_LIBRARY, getGamesStats } from '@/data/games';
 import hobbyCars from '@/assets/hobby-cars.jpg';
@@ -194,6 +194,7 @@ const AboutMe = () => {
           <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">✈️ {t('about.travel')}</Badge>
           <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">🎬 {t('about.cinema')}</Badge>
           <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">📸 {t('about.photography')}</Badge>
+          <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">🏆 {t('psn.trophies')}</Badge>
         </div>
 
         <div className="grid grid-cols-3 gap-1.5 max-w-sm mx-auto w-full">
@@ -219,6 +220,37 @@ const AboutMe = () => {
           <Badge className="bg-blue-600 text-white border-blue-600 text-[8px] tracking-wider">💙 Portista</Badge>
           <Badge className="bg-blue-800 text-white border-blue-800 text-[8px] tracking-wider">🐉 Dragão</Badge>
         </div>
+      </div>
+
+      {/* Top 5 Lists */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-10">
+        {SECTIONS.map(({ key, label, icon: Icon, color }) => (
+          <div key={key} className="border border-border rounded-sm p-5 hover:border-foreground/20 transition-all duration-300 bg-card">
+            <div className="flex items-center gap-2 mb-4">
+              <div className={`w-7 h-7 rounded-full bg-gradient-to-br ${color} flex items-center justify-center`}>
+                <Icon className="w-3.5 h-3.5 text-white" />
+              </div>
+              <p className="text-[9px] tracking-[0.3em] uppercase font-semibold text-muted-foreground">
+                Top 5 {label}
+              </p>
+            </div>
+            <div className="space-y-2">
+              {FAVORITES[key].map((item, idx) => (
+                <div key={item.name} className={`flex items-center gap-3 group rounded-sm px-2 py-1.5 -mx-2 transition-all duration-300 ${idx === 0 ? 'bg-gradient-to-r from-yellow-500/10 to-amber-500/5 border border-yellow-500/20' : ''}`}>
+                  <span className={`text-[9px] font-bold w-4 text-right ${idx === 0 ? 'text-yellow-500' : 'text-muted-foreground/50'}`}>
+                    {idx === 0 ? '★' : idx + 1}
+                  </span>
+                  <div className="flex-1 flex items-center justify-between">
+                    <span className={`text-[10px] md:text-[11px] font-medium group-hover:text-foreground transition-colors duration-300 ${idx === 0 ? 'text-foreground' : 'text-foreground/80'}`}>
+                      {item.name}
+                    </span>
+                    <span className="text-sm">{item.emoji}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* PSN Trophies */}
@@ -366,37 +398,6 @@ const AboutMe = () => {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Top 5 Lists */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-        {SECTIONS.map(({ key, label, icon: Icon, color }) => (
-          <div key={key} className="border border-border rounded-sm p-5 hover:border-foreground/20 transition-all duration-300 bg-card">
-            <div className="flex items-center gap-2 mb-4">
-              <div className={`w-7 h-7 rounded-full bg-gradient-to-br ${color} flex items-center justify-center`}>
-                <Icon className="w-3.5 h-3.5 text-white" />
-              </div>
-              <p className="text-[9px] tracking-[0.3em] uppercase font-semibold text-muted-foreground">
-                Top 5 {label}
-              </p>
-            </div>
-            <div className="space-y-2">
-              {FAVORITES[key].map((item, idx) => (
-                <div key={item.name} className={`flex items-center gap-3 group rounded-sm px-2 py-1.5 -mx-2 transition-all duration-300 ${idx === 0 ? 'bg-gradient-to-r from-yellow-500/10 to-amber-500/5 border border-yellow-500/20' : ''}`}>
-                  <span className={`text-[9px] font-bold w-4 text-right ${idx === 0 ? 'text-yellow-500' : 'text-muted-foreground/50'}`}>
-                    {idx === 0 ? '★' : idx + 1}
-                  </span>
-                  <div className="flex-1 flex items-center justify-between">
-                    <span className={`text-[10px] md:text-[11px] font-medium group-hover:text-foreground transition-colors duration-300 ${idx === 0 ? 'text-foreground' : 'text-foreground/80'}`}>
-                      {item.name}
-                    </span>
-                    <span className="text-sm">{item.emoji}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );

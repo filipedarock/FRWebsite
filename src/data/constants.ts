@@ -38,7 +38,8 @@ export const PROJECTS: Project[] = [
     category: 'PHOTOGRAPHY',
     imageUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800',
     beforeImageUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=20&w=800&sepia=1',
-    description: 'Tratamento de pele avançado e correção de cor cinematográfica para retrato editorial.'
+    description: 'Tratamento de pele avançado e correção de cor cinematográfica para retrato editorial.',
+    downloadable: true,
   },
   {
     id: 'p2',
@@ -46,35 +47,40 @@ export const PROJECTS: Project[] = [
     category: 'PHOTOGRAPHY',
     imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800',
     beforeImageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=10&w=800&grayscale=1',
-    description: 'Realce de texturas e HDR para fotografia de paisagem alpina.'
+    description: 'Realce de texturas e HDR para fotografia de paisagem alpina.',
+    downloadable: true,
   },
   {
     id: 'p3',
     title: 'Paris by Night',
     category: 'PHOTOGRAPHY',
     imageUrl: photoParis,
-    description: 'Long exposure photography capturing the light trails on the A15 highway heading to Paris.'
+    description: 'Long exposure photography capturing the light trails on the A15 highway heading to Paris.',
+    downloadable: false,
   },
   {
     id: 'p4',
     title: 'Passadiços do Paiva',
     category: 'PHOTOGRAPHY',
     imageUrl: photoPaiva,
-    description: 'The raw beauty of the Paiva river cutting through ancient rocks in Arouca, Portugal.'
+    description: 'The raw beauty of the Paiva river cutting through ancient rocks in Arouca, Portugal.',
+    downloadable: false,
   },
   {
     id: 'p5',
     title: 'Jardim do Morro',
     category: 'PHOTOGRAPHY',
     imageUrl: photoJardimMorro,
-    description: 'Golden hour sunset over the Douro river seen from Jardim do Morro, Vila Nova de Gaia.'
+    description: 'Golden hour sunset over the Douro river seen from Jardim do Morro, Vila Nova de Gaia.',
+    downloadable: false,
   },
   {
     id: 'p6',
     title: 'Gaia Sunset',
     category: 'PHOTOGRAPHY',
     imageUrl: photoGaia,
-    description: 'Warm sunset tones reflecting on the Douro river with Porto and Gaia in view.'
+    description: 'Warm sunset tones reflecting on the Douro river with Porto and Gaia in view.',
+    downloadable: false,
   },
   {
     id: '1',
@@ -89,13 +95,6 @@ export const PROJECTS: Project[] = [
     category: 'SOCIAL MEDIA',
     imageUrl: 'https://picsum.photos/400/300?random=2',
     description: 'Engaging Instagram post for travel agencies.'
-  },
-  {
-    id: '3',
-    title: 'Tech Banner 2024',
-    category: 'BANNERS',
-    imageUrl: 'https://picsum.photos/400/400?random=3',
-    description: 'High-conversion banner for a tech product launch.'
   },
   {
     id: '4',
@@ -117,13 +116,6 @@ export const PROJECTS: Project[] = [
     category: 'SOCIAL MEDIA',
     imageUrl: 'https://picsum.photos/400/450?random=6',
     description: 'Social media kit for high-end fashion brands.'
-  },
-  {
-    id: '7',
-    title: 'Event Banner',
-    category: 'BANNERS',
-    imageUrl: 'https://picsum.photos/400/350?random=7',
-    description: 'Vibrant banner for a summer music festival.'
   },
   {
     id: '10',
