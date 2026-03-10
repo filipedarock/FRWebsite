@@ -157,6 +157,9 @@ const translations: Record<Language, Record<string, string>> = {
     'project.before': 'Before',
     'project.after': 'After',
     'project.price': 'Price on request',
+    'project.download': 'Download Wallpaper',
+    'project.download_unavailable': 'Wallpaper download not available',
+    'project.compare_hint': 'Hover over the image to compare the edit',
   },
 };
 

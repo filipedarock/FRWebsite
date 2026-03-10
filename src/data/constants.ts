@@ -118,13 +118,6 @@ export const PROJECTS: Project[] = [
     description: 'Social media kit for high-end fashion brands.'
   },
   {
-    id: '7',
-    title: 'Event Banner',
-    category: 'BANNERS',
-    imageUrl: 'https://picsum.photos/400/350?random=7',
-    description: 'Vibrant banner for a summer music festival.'
-  },
-  {
     id: '10',
     title: 'Foodie Social',
     category: 'SOCIAL MEDIA',

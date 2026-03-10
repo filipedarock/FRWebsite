@@ -9,6 +9,7 @@ export interface Project {
   description: string;
   price?: string;
   buyUrl?: string;
+  downloadable?: boolean;
 }
 
 export interface ContactInfo {

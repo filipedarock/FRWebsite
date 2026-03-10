@@ -47,7 +47,6 @@ const Index = () => {
   const getCategoryDisplay = (cat: Category) => {
     const map: Record<string, string> = {
       'ANIWALL': t('nav.aniwall'),
-      'BANNERS': t('nav.banners'),
       'OTHERS': t('nav.others'),
       'PHOTOGRAPHY': t('nav.photography'),
       'ARTS': t('nav.arts'),
