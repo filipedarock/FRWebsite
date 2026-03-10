@@ -112,23 +112,16 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             )}
 
             {/* Download section for photography */}
-            {project.category === 'PHOTOGRAPHY' && (
+            {project.category === 'PHOTOGRAPHY' && project.downloadable && (
               <div className="mb-8">
-                {project.downloadable ? (
-                  <a
-                    href={project.imageUrl}
-                    download={`${project.title.replace(/\s+/g, '-').toLowerCase()}-wallpaper`}
-                    className="w-full py-3 text-center text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center gap-2 border border-foreground text-foreground hover:bg-foreground hover:text-background"
-                  >
-                    <Download className="w-4 h-4" />
-                    {t('project.download')}
-                  </a>
-                ) : (
-                  <div className="w-full py-3 text-center text-[10px] tracking-[0.2em] uppercase flex items-center justify-center gap-2 border border-border text-muted-foreground/50">
-                    <XCircle className="w-4 h-4" />
-                    {t('project.download_unavailable')}
-                  </div>
-                )}
+                <a
+                  href={project.imageUrl}
+                  download={`${project.title.replace(/\s+/g, '-').toLowerCase()}-wallpaper`}
+                  className="w-full py-3 text-center text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center gap-2 border border-foreground text-foreground hover:bg-foreground hover:text-background"
+                >
+                  <Download className="w-4 h-4" />
+                  {t('project.download')}
+                </a>
               </div>
             )}
 

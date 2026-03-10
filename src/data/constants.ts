@@ -79,7 +79,7 @@ export const PROJECTS: Project[] = [
     title: 'Gaia Sunset',
     category: 'PHOTOGRAPHY',
     imageUrl: photoGaia,
-    description: 'Warm sunset tones reflecting on the Douro river with Porto and Gaia in view.',
+    description: 'Tons quentes do pôr do sol refletidos no rio Douro com Porto e Gaia à vista.',
     downloadable: false,
   },
   {

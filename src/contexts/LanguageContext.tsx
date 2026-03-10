@@ -121,6 +121,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.travel': 'Travel',
     'about.cinema': 'Cinema',
     'about.photography': 'Photography',
+    'about.food': 'Food',
     
     // Hobbies
     'hobby.cars': 'Cars',
