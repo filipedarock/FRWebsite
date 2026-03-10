@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { Project } from '@/data/types';
-import { X, MoveHorizontal, MousePointer, Download, XCircle } from 'lucide-react';
+import { X, MoveHorizontal, MousePointer, Download } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ProjectModalProps {
