@@ -44,6 +44,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.travel': 'Viajar',
     'about.cinema': 'Cinema',
     'about.photography': 'Fotografia',
+    'about.food': 'Comida',
     
     // Hobbies
     'hobby.cars': 'Carros',
