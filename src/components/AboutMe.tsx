@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Badge } from '@/components/ui/badge';
-import { Trophy, Gamepad2, Tv, Film, Sparkles, X, User, Star, MapPin, Calendar, Heart, Percent, CheckCircle } from 'lucide-react';
+import { Trophy, Gamepad2, Tv, Film, Sparkles, X, User, Star, MapPin, Calendar, Heart, Percent, CheckCircle, Camera } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { GAMES_LIBRARY, getGamesStats } from '@/data/games';
 import hobbyCars from '@/assets/hobby-cars.jpg';
