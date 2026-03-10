@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
     title: 'Paris by Night',
     category: 'PHOTOGRAPHY',
     imageUrl: photoParis,
-    description: 'Long exposure photography capturing the light trails on the A15 highway heading to Paris.',
+    description: 'Fotografia de longa exposição captando os rastos de luz na autoestrada A15 rumo a Paris.',
     downloadable: false,
   },
   {
