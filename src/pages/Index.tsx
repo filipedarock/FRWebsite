@@ -10,7 +10,7 @@ const Index = () => {
   const { lang, setLang, t } = useLanguage();
 
   const navItems = useMemo(() => {
-    const items: Category[] = ['ANIWALL', 'ARTS', 'BANNERS', 'OTHERS', 'PHOTOGRAPHY', 'SOCIAL MEDIA'];
+    const items: Category[] = ['ANIWALL', 'ARTS', 'OTHERS', 'PHOTOGRAPHY', 'SOCIAL MEDIA'];
     return items.sort((a, b) => a.localeCompare(b));
   }, []);
 
