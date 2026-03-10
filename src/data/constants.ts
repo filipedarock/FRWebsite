@@ -71,7 +71,7 @@ export const PROJECTS: Project[] = [
     title: 'Jardim do Morro',
     category: 'PHOTOGRAPHY',
     imageUrl: photoJardimMorro,
-    description: 'Golden hour sunset over the Douro river seen from Jardim do Morro, Vila Nova de Gaia.',
+    description: 'Pôr do sol na hora dourada sobre o rio Douro visto do Jardim do Morro, Vila Nova de Gaia.',
     downloadable: false,
   },
   {
