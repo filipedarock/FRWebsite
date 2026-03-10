@@ -194,6 +194,7 @@ const AboutMe = () => {
           <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">✈️ {t('about.travel')}</Badge>
           <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">🎬 {t('about.cinema')}</Badge>
           <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">📸 {t('about.photography')}</Badge>
+          <Badge variant="outline" className="text-[8px] tracking-wider border-foreground/20">🏆 {t('psn.trophies')}</Badge>
         </div>
 
         <div className="grid grid-cols-3 gap-1.5 max-w-sm mx-auto w-full">
