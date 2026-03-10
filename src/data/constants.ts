@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
     title: 'Paris by Night',
     category: 'PHOTOGRAPHY',
     imageUrl: photoParis,
-    description: 'Long exposure photography capturing the light trails on the A15 highway heading to Paris.',
+    description: 'Fotografia de longa exposição captando os rastos de luz na autoestrada A15 rumo a Paris.',
     downloadable: false,
   },
   {
@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
     title: 'Passadiços do Paiva',
     category: 'PHOTOGRAPHY',
     imageUrl: photoPaiva,
-    description: 'The raw beauty of the Paiva river cutting through ancient rocks in Arouca, Portugal.',
+    description: 'A beleza crua do rio Paiva a cortar por entre rochas ancestrais em Arouca, Portugal.',
     downloadable: false,
   },
   {
@@ -71,7 +71,7 @@ export const PROJECTS: Project[] = [
     title: 'Jardim do Morro',
     category: 'PHOTOGRAPHY',
     imageUrl: photoJardimMorro,
-    description: 'Golden hour sunset over the Douro river seen from Jardim do Morro, Vila Nova de Gaia.',
+    description: 'Pôr do sol na hora dourada sobre o rio Douro visto do Jardim do Morro, Vila Nova de Gaia.',
     downloadable: false,
   },
   {
@@ -79,7 +79,7 @@ export const PROJECTS: Project[] = [
     title: 'Gaia Sunset',
     category: 'PHOTOGRAPHY',
     imageUrl: photoGaia,
-    description: 'Warm sunset tones reflecting on the Douro river with Porto and Gaia in view.',
+    description: 'Tons quentes do pôr do sol refletidos no rio Douro com Porto e Gaia à vista.',
     downloadable: false,
   },
   {
