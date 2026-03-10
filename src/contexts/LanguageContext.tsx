@@ -89,7 +89,6 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Nav
     'nav.aniwall': 'ANIWALL',
-    'nav.banners': 'BANNERS',
     'nav.others': 'OTHERS',
     'nav.photography': 'PHOTOGRAPHY',
     'nav.arts': 'ARTS',
