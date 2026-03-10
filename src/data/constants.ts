@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
     title: 'Passadiços do Paiva',
     category: 'PHOTOGRAPHY',
     imageUrl: photoPaiva,
-    description: 'The raw beauty of the Paiva river cutting through ancient rocks in Arouca, Portugal.',
+    description: 'A beleza crua do rio Paiva a cortar por entre rochas ancestrais em Arouca, Portugal.',
     downloadable: false,
   },
   {
