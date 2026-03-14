@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { Project } from '@/data/types';
-import { X, MoveHorizontal, MousePointer, Download } from 'lucide-react';
+import { X, MoveHorizontal, MousePointer, Download, Sparkles } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ProjectModalProps {
@@ -113,7 +113,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
 
             {/* Download section for photography */}
             {project.category === 'PHOTOGRAPHY' && project.downloadable && (
-              <div className="mb-8">
+              <div className="mb-6">
                 <a
                   href={project.imageUrl}
                   download={`${project.title.replace(/\s+/g, '-').toLowerCase()}-wallpaper`}
@@ -122,6 +122,22 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                   <Download className="w-4 h-4" />
                   {t('project.download')}
                 </a>
+              </div>
+            )}
+
+            {/* Lightroom Preset - disabled for now */}
+            {project.category === 'PHOTOGRAPHY' && (
+              <div className="mb-8">
+                <button
+                  disabled
+                  className="w-full py-3 text-center text-[10px] font-bold tracking-[0.2em] uppercase flex items-center justify-center gap-2 border border-border text-muted-foreground opacity-40 cursor-not-allowed"
+                >
+                  <Sparkles className="w-4 h-4" />
+                  {t('project.buy_preset')}
+                </button>
+                <p className="text-[9px] text-muted-foreground/50 text-center mt-2 tracking-wider uppercase">
+                  {t('project.preset_soon')}
+                </p>
               </div>
             )}
 

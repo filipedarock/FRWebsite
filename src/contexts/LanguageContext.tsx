@@ -85,6 +85,15 @@ const translations: Record<Language, Record<string, string>> = {
     'project.download': 'Descarregar Wallpaper',
     'project.download_unavailable': 'Download como wallpaper não disponível',
     'project.compare_hint': 'Passe o rato na imagem para comparar a edição',
+    'project.buy_preset': 'Comprar Preset Lightroom',
+    'project.preset_soon': 'Brevemente disponível',
+    
+    // AniWall
+    'aniwall.digital_image': 'Imagem Digital',
+    'aniwall.buy_digital': 'Comprar Digital',
+    'aniwall.framed_print': 'Quadro Emoldurado',
+    'aniwall.order_whatsapp': 'Encomendar via WhatsApp',
+    'aniwall.handcrafted_note': 'Cada peça é criada à mão com atenção ao detalhe. Encomendas de quadros emoldurados são tratadas individualmente.',
   },
   en: {
     // Sidebar
@@ -162,6 +171,15 @@ const translations: Record<Language, Record<string, string>> = {
     'project.download': 'Download Wallpaper',
     'project.download_unavailable': 'Wallpaper download not available',
     'project.compare_hint': 'Hover over the image to compare the edit',
+    'project.buy_preset': 'Buy Lightroom Preset',
+    'project.preset_soon': 'Coming soon',
+    
+    // AniWall
+    'aniwall.digital_image': 'Digital Image',
+    'aniwall.buy_digital': 'Buy Digital',
+    'aniwall.framed_print': 'Framed Print',
+    'aniwall.order_whatsapp': 'Order via WhatsApp',
+    'aniwall.handcrafted_note': 'Each piece is handcrafted with attention to detail. Framed print orders are handled individually.',
   },
 };
 
