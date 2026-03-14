@@ -127,42 +127,48 @@ const Index = () => {
 
             {/* Gallery Content */}
             <main className="flex-1 p-6 md:p-12 lg:p-16 flex flex-col">
-              <div className="masonry-columns flex-grow min-h-[400px]">
-                {paginatedProjects.map((project) => (
-                  <ProjectCard key={project.id} project={project} />
-                ))}
-              </div>
+              {activeFilter === 'ANIWALL' ? (
+                <AniWallGrid />
+              ) : (
+                <>
+                  <div className="masonry-columns flex-grow min-h-[400px]">
+                    {paginatedProjects.map((project) => (
+                      <ProjectCard key={project.id} project={project} />
+                    ))}
+                  </div>
 
-              {filteredProjects.length === 0 ? (
-                <div className="py-32 text-center">
-                  <p className="text-[10px] tracking-[0.4em] uppercase font-light text-portfolio-text-subtle">
-                    {t('gallery.loading')}
-                  </p>
-                </div>
-              ) : totalPages > 1 && (
-                <div className="flex justify-center items-center gap-10 mt-12 py-4">
-                  <button
-                    disabled={currentPage === 0}
-                    onClick={() => setCurrentPage(p => p - 1)}
-                    className={`text-sm transition-all duration-300 ${
-                      currentPage === 0 ? 'opacity-20 cursor-not-allowed' : 'hover:scale-125'
-                    }`}
-                  >
-                    <ChevronLeft className="w-4 h-4" />
-                  </button>
-                  <span className="text-[10px] tracking-[0.5em] font-medium uppercase text-muted-foreground">
-                    {currentPage + 1} / {totalPages}
-                  </span>
-                  <button
-                    disabled={currentPage === totalPages - 1}
-                    onClick={() => setCurrentPage(p => p + 1)}
-                    className={`text-sm transition-all duration-300 ${
-                      currentPage === totalPages - 1 ? 'opacity-20 cursor-not-allowed' : 'hover:scale-125'
-                    }`}
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
+                  {filteredProjects.length === 0 ? (
+                    <div className="py-32 text-center">
+                      <p className="text-[10px] tracking-[0.4em] uppercase font-light text-portfolio-text-subtle">
+                        {t('gallery.loading')}
+                      </p>
+                    </div>
+                  ) : totalPages > 1 && (
+                    <div className="flex justify-center items-center gap-10 mt-12 py-4">
+                      <button
+                        disabled={currentPage === 0}
+                        onClick={() => setCurrentPage(p => p - 1)}
+                        className={`text-sm transition-all duration-300 ${
+                          currentPage === 0 ? 'opacity-20 cursor-not-allowed' : 'hover:scale-125'
+                        }`}
+                      >
+                        <ChevronLeft className="w-4 h-4" />
+                      </button>
+                      <span className="text-[10px] tracking-[0.5em] font-medium uppercase text-muted-foreground">
+                        {currentPage + 1} / {totalPages}
+                      </span>
+                      <button
+                        disabled={currentPage === totalPages - 1}
+                        onClick={() => setCurrentPage(p => p + 1)}
+                        className={`text-sm transition-all duration-300 ${
+                          currentPage === totalPages - 1 ? 'opacity-20 cursor-not-allowed' : 'hover:scale-125'
+                        }`}
+                      >
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  )}
+                </>
               )}
             </main>
 
