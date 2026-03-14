@@ -171,6 +171,15 @@ const translations: Record<Language, Record<string, string>> = {
     'project.download': 'Download Wallpaper',
     'project.download_unavailable': 'Wallpaper download not available',
     'project.compare_hint': 'Hover over the image to compare the edit',
+    'project.buy_preset': 'Buy Lightroom Preset',
+    'project.preset_soon': 'Coming soon',
+    
+    // AniWall
+    'aniwall.digital_image': 'Digital Image',
+    'aniwall.buy_digital': 'Buy Digital',
+    'aniwall.framed_print': 'Framed Print',
+    'aniwall.order_whatsapp': 'Order via WhatsApp',
+    'aniwall.handcrafted_note': 'Each piece is handcrafted with attention to detail. Framed print orders are handled individually.',
   },
 };
 
