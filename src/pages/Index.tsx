@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { PROJECTS, CONTACT_INFO, ITEMS_PER_PAGE } from '@/data/constants';
 import { Category } from '@/data/types';
 import ProjectCard from '@/components/ProjectCard';
+import AniWallGrid from '@/components/AniWallGrid';
 import AboutMe from '@/components/AboutMe';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Sun, Moon, Mail, Linkedin, Instagram, ChevronLeft, ChevronRight, ChevronUp, Globe } from 'lucide-react';
