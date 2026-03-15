@@ -183,7 +183,11 @@ const translations: Record<Language, Record<string, string>> = {
     'aniwall.buy_digital': 'Buy Digital',
     'aniwall.framed_print': 'Framed Print',
     'aniwall.order_whatsapp': 'Order via WhatsApp',
-    'aniwall.handcrafted_note': 'Each piece is handcrafted with attention to detail. Framed print orders are handled individually.',
+    'aniwall.phone_case': 'Phone Case',
+    'aniwall.order_phone_case': 'Order Case',
+    'aniwall.frames_title': 'Frames & Posters',
+    'aniwall.phones_title': 'Phone Cases',
+    'aniwall.handcrafted_note': 'Each piece is handcrafted with attention to detail. Orders are handled individually.',
   },
 };
 
