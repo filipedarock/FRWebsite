@@ -53,15 +53,15 @@ const ProductGridItem = ({
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
 
-      {/* Slide dots */}
+      {/* Slide dots - always visible */}
       {product.images.length > 1 && (
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
           {product.images.map((_, i) => (
             <button
               key={i}
               onClick={(e) => { e.stopPropagation(); setCurrentImg(i); }}
-              className={`w-1.5 h-1.5 rounded-full transition-all ${
-                i === currentImg ? 'bg-white scale-125' : 'bg-white/50'
+              className={`w-2 h-2 rounded-full transition-all shadow-sm ${
+                i === currentImg ? 'bg-white scale-125 shadow-md' : 'bg-white/60'
               }`}
             />
           ))}
