@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { ANIWALL_PRODUCTS } from '@/data/aniwall-products';
+import { FRAME_PRODUCTS, PHONE_PRODUCTS } from '@/data/aniwall-products';
 import { AniWallProduct } from '@/data/types';
-import { ChevronLeft, ChevronRight, X, ShoppingCart, MessageSquare } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, ShoppingCart, MessageSquare, Smartphone, Frame } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const AniWallGrid = () => {
@@ -10,18 +10,44 @@ const AniWallGrid = () => {
 
   return (
     <>
-      {/* Instagram-style Grid */}
-      <div className="grid grid-cols-2 gap-1 md:gap-2 max-w-5xl mx-auto">
-        {ANIWALL_PRODUCTS.map((product) => (
-          <ProductGridItem
-            key={product.id}
-            product={product}
-            onClick={() => setSelectedProduct(product)}
-          />
-        ))}
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          {/* Left column — Frames / Posters */}
+          <div>
+            <h3 className="text-[10px] tracking-[0.3em] uppercase font-bold text-muted-foreground mb-4 flex items-center gap-2">
+              <Frame className="w-3.5 h-3.5" />
+              {t('aniwall.frames_title')}
+            </h3>
+            <div className="grid grid-cols-2 gap-1 md:gap-2">
+              {FRAME_PRODUCTS.map((product) => (
+                <ProductGridItem
+                  key={product.id}
+                  product={product}
+                  onClick={() => setSelectedProduct(product)}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Right column — Phone Cases */}
+          <div>
+            <h3 className="text-[10px] tracking-[0.3em] uppercase font-bold text-muted-foreground mb-4 flex items-center gap-2">
+              <Smartphone className="w-3.5 h-3.5" />
+              {t('aniwall.phones_title')}
+            </h3>
+            <div className="grid grid-cols-2 gap-1 md:gap-2">
+              {PHONE_PRODUCTS.map((product) => (
+                <ProductGridItem
+                  key={product.id}
+                  product={product}
+                  onClick={() => setSelectedProduct(product)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Product Modal */}
       {selectedProduct && (
         <AniWallModal
           product={selectedProduct}
@@ -32,7 +58,6 @@ const AniWallGrid = () => {
   );
 };
 
-/* Each grid item shows first image with hover slideshow preview */
 const ProductGridItem = ({
   product,
   onClick,
@@ -53,7 +78,6 @@ const ProductGridItem = ({
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
 
-      {/* Slide dots - always visible */}
       {product.images.length > 1 && (
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
           {product.images.map((_, i) => (
@@ -68,7 +92,6 @@ const ProductGridItem = ({
         </div>
       )}
 
-      {/* Arrows on hover */}
       {product.images.length > 1 && (
         <>
           <button
@@ -86,18 +109,21 @@ const ProductGridItem = ({
         </>
       )}
 
-      {/* Overlay with title */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
         <div>
           <h3 className="text-white text-sm md:text-base font-bold">{product.title}</h3>
           <p className="text-white/70 text-[10px] md:text-xs">{product.subtitle}</p>
+          <p className="text-white/90 text-[10px] md:text-xs font-semibold mt-1">
+            {product.productType === 'phone'
+              ? `${product.phonePrice}€`
+              : `${product.digitalPrice}€`}
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-/* Full modal with slideshow + purchase options */
 const AniWallModal = ({
   product,
   onClose,
@@ -109,15 +135,14 @@ const AniWallModal = ({
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const { t } = useLanguage();
 
-  const handleWhatsAppOrder = (size: string) => {
+  const handleWhatsAppOrder = (label: string) => {
     const msg = encodeURIComponent(
-      `Olá! Gostaria de encomendar o quadro "${product.title}" em tamanho ${size}.`
+      `Olá! Gostaria de encomendar "${product.title}" — ${label}.`
     );
     window.open(`https://wa.me/${product.whatsappNumber}?text=${msg}`, '_blank');
   };
 
   const handleDigitalPurchase = () => {
-    // TODO: Stripe checkout integration
     alert('Stripe checkout em breve!');
   };
 
@@ -139,7 +164,6 @@ const AniWallModal = ({
               alt={`${product.title} - ${currentImg + 1}`}
               className="w-full h-auto shadow-xl"
             />
-
             {product.images.length > 1 && (
               <>
                 <button
@@ -154,8 +178,6 @@ const AniWallModal = ({
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
-
-                {/* Thumbnails */}
                 <div className="flex gap-2 mt-4 justify-center">
                   {product.images.map((img, i) => (
                     <button
@@ -186,50 +208,86 @@ const AniWallModal = ({
               {product.description}
             </p>
 
-            {/* Digital Purchase - €2 */}
-            <div className="mb-6">
-              <h4 className="text-[10px] font-bold uppercase tracking-widest mb-3 text-foreground">
-                {t('aniwall.digital_image')}
-              </h4>
-              <button
-                onClick={handleDigitalPurchase}
-                className="w-full py-3 text-center text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center gap-3 bg-foreground text-background hover:opacity-80"
-              >
-                <ShoppingCart className="w-4 h-4" />
-                {t('aniwall.buy_digital')} — {product.digitalPrice}€
-              </button>
-            </div>
-
-            {/* Frame Sizes - WhatsApp */}
-            <div className="mb-8">
-              <h4 className="text-[10px] font-bold uppercase tracking-widest mb-3 text-foreground">
-                {t('aniwall.framed_print')}
-              </h4>
-              <div className="flex gap-2 mb-3">
-                {product.frameSizes.map((size) => (
+            {product.productType === 'frame' && (
+              <>
+                {/* Digital Print — €2 */}
+                <div className="mb-6">
+                  <h4 className="text-[10px] font-bold uppercase tracking-widest mb-3 text-foreground">
+                    {t('aniwall.digital_image')}
+                  </h4>
                   <button
-                    key={size}
-                    onClick={() => setSelectedSize(size)}
-                    className={`px-4 py-2 text-[11px] font-bold tracking-widest uppercase border transition-all ${
-                      selectedSize === size
-                        ? 'border-foreground bg-foreground text-background'
-                        : 'border-border text-foreground hover:border-foreground'
-                    }`}
+                    onClick={handleDigitalPurchase}
+                    className="w-full py-3 text-center text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center gap-3 bg-foreground text-background hover:opacity-80"
                   >
-                    {size}
+                    <ShoppingCart className="w-4 h-4" />
+                    {t('aniwall.buy_digital')} — {product.digitalPrice}€
                   </button>
-                ))}
-              </div>
-              {selectedSize && (
-                <button
-                  onClick={() => handleWhatsAppOrder(selectedSize)}
-                  className="w-full py-3 text-center text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center gap-3 border border-foreground text-foreground hover:bg-foreground hover:text-background"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  {t('aniwall.order_whatsapp')} ({selectedSize})
-                </button>
-              )}
-            </div>
+                </div>
+
+                {/* Frame Sizes — WhatsApp */}
+                <div className="mb-8">
+                  <h4 className="text-[10px] font-bold uppercase tracking-widest mb-3 text-foreground">
+                    {t('aniwall.framed_print')}
+                  </h4>
+                  <div className="flex gap-2 mb-3">
+                    {product.frameSizes.map((size) => (
+                      <button
+                        key={size}
+                        onClick={() => setSelectedSize(size)}
+                        className={`px-4 py-2 text-[11px] font-bold tracking-widest uppercase border transition-all ${
+                          selectedSize === size
+                            ? 'border-foreground bg-foreground text-background'
+                            : 'border-border text-foreground hover:border-foreground'
+                        }`}
+                      >
+                        {size}
+                      </button>
+                    ))}
+                  </div>
+                  {selectedSize && (
+                    <button
+                      onClick={() => handleWhatsAppOrder(`Quadro ${selectedSize}`)}
+                      className="w-full py-3 text-center text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center gap-3 border border-foreground text-foreground hover:bg-foreground hover:text-background"
+                    >
+                      <MessageSquare className="w-4 h-4" />
+                      {t('aniwall.order_whatsapp')} ({selectedSize})
+                    </button>
+                  )}
+                </div>
+              </>
+            )}
+
+            {product.productType === 'phone' && (
+              <>
+                {/* Digital — €2 */}
+                <div className="mb-6">
+                  <h4 className="text-[10px] font-bold uppercase tracking-widest mb-3 text-foreground">
+                    {t('aniwall.digital_image')}
+                  </h4>
+                  <button
+                    onClick={handleDigitalPurchase}
+                    className="w-full py-3 text-center text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center gap-3 bg-foreground text-background hover:opacity-80"
+                  >
+                    <ShoppingCart className="w-4 h-4" />
+                    {t('aniwall.buy_digital')} — {product.digitalPrice}€
+                  </button>
+                </div>
+
+                {/* Phone Case — €20 via WhatsApp */}
+                <div className="mb-8">
+                  <h4 className="text-[10px] font-bold uppercase tracking-widest mb-3 text-foreground">
+                    {t('aniwall.phone_case')}
+                  </h4>
+                  <button
+                    onClick={() => handleWhatsAppOrder(`Capa de telemóvel — ${product.phonePrice}€`)}
+                    className="w-full py-3 text-center text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center gap-3 border border-foreground text-foreground hover:bg-foreground hover:text-background"
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                    {t('aniwall.order_phone_case')} — {product.phonePrice}€
+                  </button>
+                </div>
+              </>
+            )}
 
             <div className="pt-6 border-t border-border italic">
               <p className="text-sm font-light leading-relaxed text-muted-foreground">

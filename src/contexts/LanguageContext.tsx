@@ -93,7 +93,11 @@ const translations: Record<Language, Record<string, string>> = {
     'aniwall.buy_digital': 'Comprar Digital',
     'aniwall.framed_print': 'Quadro Emoldurado',
     'aniwall.order_whatsapp': 'Encomendar via WhatsApp',
-    'aniwall.handcrafted_note': 'Cada peça é criada à mão com atenção ao detalhe. Encomendas de quadros emoldurados são tratadas individualmente.',
+    'aniwall.phone_case': 'Capa de Telemóvel',
+    'aniwall.order_phone_case': 'Encomendar Capa',
+    'aniwall.frames_title': 'Quadros & Posters',
+    'aniwall.phones_title': 'Capas de Telemóvel',
+    'aniwall.handcrafted_note': 'Cada peça é criada à mão com atenção ao detalhe. Encomendas são tratadas individualmente.',
   },
   en: {
     // Sidebar
@@ -179,7 +183,11 @@ const translations: Record<Language, Record<string, string>> = {
     'aniwall.buy_digital': 'Buy Digital',
     'aniwall.framed_print': 'Framed Print',
     'aniwall.order_whatsapp': 'Order via WhatsApp',
-    'aniwall.handcrafted_note': 'Each piece is handcrafted with attention to detail. Framed print orders are handled individually.',
+    'aniwall.phone_case': 'Phone Case',
+    'aniwall.order_phone_case': 'Order Case',
+    'aniwall.frames_title': 'Frames & Posters',
+    'aniwall.phones_title': 'Phone Cases',
+    'aniwall.handcrafted_note': 'Each piece is handcrafted with attention to detail. Orders are handled individually.',
   },
 };
 
