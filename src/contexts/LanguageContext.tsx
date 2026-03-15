@@ -93,7 +93,11 @@ const translations: Record<Language, Record<string, string>> = {
     'aniwall.buy_digital': 'Comprar Digital',
     'aniwall.framed_print': 'Quadro Emoldurado',
     'aniwall.order_whatsapp': 'Encomendar via WhatsApp',
-    'aniwall.handcrafted_note': 'Cada peça é criada à mão com atenção ao detalhe. Encomendas de quadros emoldurados são tratadas individualmente.',
+    'aniwall.phone_case': 'Capa de Telemóvel',
+    'aniwall.order_phone_case': 'Encomendar Capa',
+    'aniwall.frames_title': 'Quadros & Posters',
+    'aniwall.phones_title': 'Capas de Telemóvel',
+    'aniwall.handcrafted_note': 'Cada peça é criada à mão com atenção ao detalhe. Encomendas são tratadas individualmente.',
   },
   en: {
     // Sidebar
