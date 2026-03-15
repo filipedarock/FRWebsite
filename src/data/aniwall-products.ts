@@ -16,45 +16,67 @@ import hkPoster02 from '@/assets/aniwall/hk-poster-02.png';
 
 const WHATSAPP = '351912345678';
 
-export const ANIWALL_PRODUCTS: AniWallProduct[] = [
+export const FRAME_PRODUCTS: AniWallProduct[] = [
   {
-    id: 'dn',
+    id: 'dn-frame',
     title: 'Death Note',
-    subtitle: 'Poster & Phone Case Collection',
-    images: [dnPoster01, dnPoster02, dnPhone01],
-    description: 'Coleção exclusiva Death Note com poster decorativo e capa de telemóvel. Design minimalista com Ryuk e L.',
+    subtitle: 'Poster Collection',
+    images: [dnPoster01, dnPoster02],
+    description: 'Coleção exclusiva Death Note com poster decorativo. Design minimalista com Ryuk e L.',
     digitalPrice: 2,
+    productType: 'frame',
     frameSizes: ['A5', 'A4'],
     whatsappNumber: WHATSAPP,
   },
   {
-    id: 'db',
+    id: 'db-frame',
     title: 'Dragon Ball',
     subtitle: 'Poster Collection',
     images: [dbPoster01, dbPoster02, dbDetail01],
     description: 'Poster épico Dragon Ball reunindo todos os personagens icónicos. Disponível em poster emoldurado e impressão digital.',
     digitalPrice: 2,
+    productType: 'frame',
     frameSizes: ['A5', 'A4'],
     whatsappNumber: WHATSAPP,
   },
   {
-    id: 'ds',
+    id: 'ds-frame',
     title: 'Demon Slayer',
     subtitle: 'Kimetsu no Yaiba Collection',
     images: [dsPoster01, dsPoster02],
     description: 'Coleção Demon Slayer com os pilares e personagens principais. Arte premium para decoração.',
     digitalPrice: 2,
+    productType: 'frame',
     frameSizes: ['A5', 'A4'],
     whatsappNumber: WHATSAPP,
   },
   {
-    id: 'hk',
+    id: 'hk-frame',
     title: 'Haikyuu!!',
     subtitle: 'Karasuno Collection',
     images: [hkPoster01, hkPoster02],
     description: 'Poster Haikyuu!! com a equipa Karasuno completa. Design vibrante em tons laranja.',
     digitalPrice: 2,
+    productType: 'frame',
     frameSizes: ['A5', 'A4'],
     whatsappNumber: WHATSAPP,
   },
 ];
+
+export const PHONE_PRODUCTS: AniWallProduct[] = [
+  {
+    id: 'dn-phone',
+    title: 'Death Note',
+    subtitle: 'Phone Case',
+    images: [dnPhone01],
+    description: 'Capa de telemóvel exclusiva Death Note com design premium.',
+    digitalPrice: 2,
+    phonePrice: 20,
+    productType: 'phone',
+    frameSizes: [],
+    whatsappNumber: WHATSAPP,
+  },
+];
+
+// Combined for backward compat
+export const ANIWALL_PRODUCTS: AniWallProduct[] = [...FRAME_PRODUCTS, ...PHONE_PRODUCTS];
