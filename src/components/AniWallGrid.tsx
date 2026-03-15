@@ -73,13 +73,13 @@ const ProductGridItem = ({
         <>
           <button
             onClick={(e) => { e.stopPropagation(); setCurrentImg(i => i === 0 ? product.images.length - 1 : i - 1); }}
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/40 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity hover:bg-black/70"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); setCurrentImg(i => (i + 1) % product.images.length); }}
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/40 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity hover:bg-black/70"
           >
             <ChevronRight className="w-4 h-4" />
           </button>
