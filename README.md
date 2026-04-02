@@ -1,6 +1,8 @@
 <<<<<<< ours
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
 # Welcome to your Lovable project
 
 ## Project info
@@ -79,6 +81,10 @@ Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/c
 >>>>>>> theirs
 =======
 >>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
 # FRWebsite
 
 Portefólio pessoal de Filipe Rocha.
@@ -90,6 +96,12 @@ Este repositório passa a identificar o projeto como **FRWebsite**.
 O nome público do projeto é **Filipe Rocha Portefolio**.
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
 >>>>>>> theirs
 =======
 >>>>>>> theirs
