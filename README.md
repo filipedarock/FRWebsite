@@ -1,3 +1,8 @@
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
 # Welcome to your Lovable project
 
 ## Project info
@@ -71,3 +76,34 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+=======
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+# FRWebsite
+
+Portefólio pessoal de Filipe Rocha.
+
+## Nome do projeto
+Este repositório passa a identificar o projeto como **FRWebsite**.
+
+## Branding do site
+O nome público do projeto é **Filipe Rocha Portefolio**.
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs

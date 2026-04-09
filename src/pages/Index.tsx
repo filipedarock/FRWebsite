@@ -61,8 +61,7 @@ const Index = () => {
       <div className="w-full max-w-[1600px] mx-auto shadow-2xl">
         <div className="relative min-h-screen flex flex-col md:flex-row transition-colors duration-500 bg-card text-foreground">
 
-          {/* Sidebar */}
-          <aside className="w-full md:w-24 lg:w-28 border-b md:border-b-0 md:border-r border-border flex flex-row md:flex-col justify-between items-center py-4 md:py-12 px-6 md:px-4 z-50 shrink-0 transition-colors duration-500 bg-sidebar">
+          <aside className="w-full md:w-24 lg:w-28 border-b md:border-b-0 md:border-r border-border flex flex-row md:flex-col justify-between items-center py-4 md:py-12 px-6 md:px-4 z-50 shrink-0 transition-colors duration-500 bg-sidebar sticky top-0 md:self-start md:min-h-screen">
             {/* Theme & Language Toggles */}
             <div className="flex flex-row md:flex-col items-center gap-3">
               <button
